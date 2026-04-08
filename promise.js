@@ -1,4 +1,4 @@
-let testPromiseFirst = function (param) {
+const testPromiseFirst = function (param) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
             resolve(`hello Itamar ${param}`);
@@ -6,7 +6,7 @@ let testPromiseFirst = function (param) {
     })
 };
 
-let testPromiseSecond = function (param) {
+const testPromiseSecond = function (param) {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
             resolve(`hello Valery ${param}`);
@@ -14,7 +14,7 @@ let testPromiseSecond = function (param) {
     })
 };
 
-let assignedPromise1 = testPromiseFirst.bind(null, 'Itamar');
-let assignedPromise2 = testPromiseSecond.bind(null, 'Gadoli');
+const assignedPromise1 = testPromiseFirst.bind(null, 'Itamar');
+const assignedPromise2 = testPromiseSecond.bind(null, 'Gadoli');
 
 return Promise.all([assignedPromise1(), assignedPromise2()]).then(console.log)
